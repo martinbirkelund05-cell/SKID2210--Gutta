@@ -1,0 +1,286 @@
+/* ===== Strukturerte oppgaver — eksamen-stil ===== */
+.task-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin-bottom: 18px;
+}
+@media (max-width: 720px) {
+  .task-card { padding: 18px 18px; }
+}
+.task-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--line);
+}
+.task-header .task-number {
+  font-family: var(--font-serif);
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--ink);
+}
+.task-header .task-title {
+  font-family: var(--font-serif);
+  font-size: 1.2em;
+  font-weight: 500;
+  color: var(--ink);
+  flex: 1;
+  min-width: 0;
+}
+.task-header .task-meta {
+  font-size: 0.85em;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.task-section {
+  margin: 22px 0;
+}
+.task-section-label {
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+  display: block;
+}
+.task-context {
+  font-size: 1.04em;
+  line-height: 1.75;
+  color: var(--ink);
+  font-family: var(--font-serif);
+}
+
+/* Gitte data — strukturert tabell */
+.given-data {
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 8px 0;
+}
+.given-group {
+  margin-bottom: 16px;
+}
+.given-group:last-child { margin-bottom: 0; }
+.given-group-title {
+  font-size: 0.92em;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+.given-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px 24px;
+  font-family: var(--font-serif);
+  font-size: 1.0em;
+  line-height: 1.7;
+}
+.given-item {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.given-item .gi-sym {
+  min-width: 0;
+  color: var(--ink);
+}
+.given-item .gi-eq { color: var(--muted); padding: 0 4px; }
+.given-item .gi-val {
+  color: var(--ink);
+  font-weight: 500;
+}
+.given-item .gi-desc {
+  color: var(--muted);
+  font-size: 0.88em;
+  font-style: italic;
+  margin-left: 8px;
+}
+
+.find-statement {
+  font-family: var(--font-serif);
+  font-size: 1.02em;
+  line-height: 1.7;
+  color: var(--ink);
+  background: linear-gradient(90deg, rgba(200,163,77,0.08), transparent);
+  border-left: 3px solid var(--accent);
+  padding: 10px 16px;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Deloppgaver i strukturert form */
+.task-parts {
+  margin-top: 22px;
+}
+.task-part {
+  display: flex;
+  gap: 14px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line-2);
+}
+.task-part:first-child { border-top: none; padding-top: 8px; }
+.task-part-letter {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-family: var(--font-serif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95em;
+  margin-top: 2px;
+}
+.task-part-body {
+  flex: 1;
+  min-width: 0;
+}
+.task-part-q {
+  font-family: var(--font-serif);
+  font-size: 1.02em;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.task-part-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.task-part-input input[type="number"] {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: var(--font-mono);
+  width: 140px;
+  background: white;
+}
+.task-part-input input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200,163,77,0.18);
+}
+.task-part-input.good input { border-color: var(--good); background: #f1f8f1; }
+.task-part-input.bad input { border-color: var(--bad); background: #fdf3f3; }
+.task-part-input .unit {
+  font-family: var(--font-serif);
+  color: var(--ink-2);
+  font-size: 0.95em;
+  min-width: 50px;
+}
+
+/* Fasit-boks */
+.fasit-box {
+  margin-top: 16px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 18px 22px;
+}
+.fasit-section {
+  margin-bottom: 16px;
+}
+.fasit-section:last-child { margin-bottom: 0; }
+.fasit-label {
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 8px;
+  display: block;
+}
+.fasit-answer {
+  font-family: var(--font-serif);
+  font-size: 1.04em;
+}
+.fasit-answer strong {
+  color: var(--ink);
+  font-size: 1.1em;
+}
+.fasit-step {
+  padding: 6px 0;
+  font-family: var(--font-serif);
+  font-size: 0.98em;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+
+/* Bedre layout for regneoppgaver — mer luft (legacy fallback) */
+.calc-task-text {
+  font-size: 1.04em;
+  line-height: 1.75;
+  margin: 14px 0 22px 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+}
+.calc-part {
+  margin: 22px 0;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+}
+.calc-part-q {
+  font-size: 1.02em;
+  line-height: 1.65;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.calc-part-formula {
+  margin: 12px 0;
+}
+.calc-step {
+  padding: 6px 0;
+  font-size: 0.97em;
+  color: var(--ink-2);
+  line-height: 1.65;
+  font-family: var(--font-serif);
+}
+
+/* MCQ — luftigere kort */
+.mcq-question-text {
+  font-family: var(--font-serif);
+  font-size: 1.08em;
+  line-height: 1.7;
+  margin: 14px 0 20px 0;
+  color: var(--ink);
+}
+.mcq-option {
+  font-family: var(--font-serif);
+  font-size: 1.0em;
+  line-height: 1.6;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.mcq-option:hover { background: var(--surface-2); }
+.mcq-option.selected { border-color: var(--accent); background: rgba(200,163,77,0.08); }
+.mcq-option.correct { border-color: var(--good); background: #f1f8f1; }
+.mcq-option.wrong { border-color: var(--bad); background: #fdf3f3; }
+
+/* Flashcards og written — bedre tekstvisning */
+.flashcard-text, .written-text {
+  font-family: var(--font-serif);
+  font-size: 1.08em;
+  line-height: 1.75;
+  color: var(--ink);
+}
+

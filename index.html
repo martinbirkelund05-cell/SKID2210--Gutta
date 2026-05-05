@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SKID2210 – Eksamensøving</title>
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/tasks.css">
+
+<!-- KaTeX for matematisk formelvisning -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      SKID2210
+      <span class="sub">Eksamensøving · 2026</span>
+    </div>
+    <nav id="nav">
+      <div class="nav-item active" data-page="home"><span class="nav-icon">▣</span> Dashboard</div>
+      <div class="nav-section">Øving</div>
+      <div class="nav-item" data-page="flashcards"><span class="nav-icon">◉</span> Flashcards</div>
+      <div class="nav-item" data-page="mcq"><span class="nav-icon">⊙</span> Multiple Choice</div>
+      <div class="nav-item" data-page="calc"><span class="nav-icon">∑</span> Regneoppgaver</div>
+      <div class="nav-item" data-page="written"><span class="nav-icon">≡</span> Innskrivningsprøve</div>
+      <div class="nav-section">Eksamen</div>
+      <div class="nav-item" data-page="exam"><span class="nav-icon">✎</span> Eksamensprøve</div>
+      <div class="nav-section">Læring</div>
+      <div class="nav-item" data-page="analytics"><span class="nav-icon">⌗</span> Analyse</div>
+      <div class="nav-item" data-page="bank"><span class="nav-icon">∫</span> Kildebank</div>
+    </nav>
+    <div class="sidebar-footer">
+      <div>Karaktergrenser:</div>
+      <div style="font-family: var(--font-mono); font-size: 11px; margin-top: 4px;">
+        A ≥ 95 · B ≥ 75 · C ≥ 65<br>D ≥ 55 · E ≥ 40 · F &lt; 40
+      </div>
+      <button class="btn-reset" onclick="resetAllData()">Nullstill alle data</button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="page active" id="page-home"></section>
+    <section class="page" id="page-flashcards"></section>
+    <section class="page" id="page-mcq"></section>
+    <section class="page" id="page-calc"></section>
+    <section class="page" id="page-written"></section>
+    <section class="page" id="page-exam"></section>
+    <section class="page" id="page-analytics"></section>
+    <section class="page" id="page-bank"></section>
+  </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<!-- Data: lasterekkefølge respekterer avhengigheter -->
+<script src="data/fx-tokens.js"></script>
+<script src="data/topics.js"></script>
+<script src="data/flashcards.js"></script>
+<script src="data/mcq.js"></script>
+<script src="data/calc-tasks.js"></script>
+<script src="data/written.js"></script>
+<script src="data/formula-bank.js"></script>
+<script src="data/exam-patterns.js"></script>
+<script src="data/exam-task-bank.js"></script>
+
+<!-- Core -->
+<script src="js/core/state.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/math.js"></script>
+
+<!-- Task renderer -->
+<script src="js/tasks/task-renderer.js"></script>
+
+<!-- Modes -->
+<script src="js/modes/home.js"></script>
+<script src="js/modes/flashcards.js"></script>
+<script src="js/modes/mcq.js"></script>
+<script src="js/modes/calc.js"></script>
+<script src="js/modes/written.js"></script>
+<script src="js/modes/exam.js"></script>
+<script src="js/modes/analytics.js"></script>
+<script src="js/modes/bank.js"></script>
+
+<!-- App init (must be last) -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
