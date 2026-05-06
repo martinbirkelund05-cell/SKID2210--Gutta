@@ -168,6 +168,7 @@ skid2210/
 │   │   └── bank.js
 │   └── app.js              ← Router + init (lastes sist)
 └── assets/                 ← Tom (til bilder)
+
 ```
 
 ---
